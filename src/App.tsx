@@ -1,7 +1,10 @@
+import { Router } from "./Router"
+import { BrowserRouter } from 'react-router-dom'
+
 export const App = () => {
   return(
-    <div>
-      <h1>App</h1>
-    </div>
+    <BrowserRouter>
+      <Router/>
+    </BrowserRouter>
   )
 }
