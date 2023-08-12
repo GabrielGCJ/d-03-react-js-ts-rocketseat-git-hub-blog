@@ -8,15 +8,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        /* background-color: ${(props) => props.theme['gray-200']};
-        color: ${(props) => props.theme['gray-1000']}; */
-        -webkit-font-smoothing: antialiased ;
-        
+        background-color: ${(props) => props.theme['base-background']};
+        color: ${(props) => props.theme['base-title']}; 
+        -webkit-font-smoothing: antialiased ;        
     }
 
     body, input, textarea, button {
-        /* font-family: 'Roboto', sans-serif;
+         font-family: 'Nunito', sans-serif;
         font-weight: 400;
-        font-size: 1rem; */
+        font-size: 1rem;
     }
 `
