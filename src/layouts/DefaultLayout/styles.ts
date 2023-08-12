@@ -12,7 +12,6 @@ export const LayoutContainer = styled.div`
 
   padding: 2.5rem;
 
-  background-color: ${(props) => props.theme['gray-800']};
   border-radius: 8px;
 
   display: flex;
