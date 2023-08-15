@@ -1,10 +1,12 @@
-import { HeaderContainer } from './styles'
+import { HeaderContainer, ImgContainer } from './styles'
 import logo from '../../assents/Logo.svg'
 
 export const Header = () => {
   return (
     <HeaderContainer>
-      <img src={logo} alt="" />
+      <ImgContainer>
+        <img src={logo} alt="" />
+      </ImgContainer>
     </HeaderContainer>
   )
 }
