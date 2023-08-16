@@ -13,9 +13,11 @@ import {
   TagsContainer,
 } from './styles'
 
-import gitIcon2 from '../../../../assents/Icon-Git.svg'
+import gitIcon from '../../../../assents/Icon-Git.svg'
+import jobIcon from '../../../../assents/Icon-Job.svg'
+import followersIcon from '../../../../assents/Icon-Followers.svg'
 
-import gitIcon from '../../../../assents/github_icon.svg'
+import gitReturnIcon from '../../../../assents/githubReturnImg.svg'
 
 export const Profile = () => {
   return (
@@ -30,7 +32,7 @@ export const Profile = () => {
                 <h1>Cameron Williamson</h1>
               </NameContainer>
               <GitImgContainer>
-                <img src={gitIcon} alt="" />
+                <img src={gitReturnIcon} alt="" />
               </GitImgContainer>
             </NameAndReturnConteiner>
             <p className="textoLimitado">
@@ -40,15 +42,15 @@ export const Profile = () => {
             </p>
             <TagsContainer>
               <GitTagContainer>
-                <img src={gitIcon2} alt="" />
+                <img src={gitIcon} alt="" />
                 <p>cameronwll</p>
               </GitTagContainer>
               <JobTagContainer>
-                <img src={gitIcon2} alt="" />
+                <img src={jobIcon} alt="" />
                 <p>Rocketseat</p>
               </JobTagContainer>
               <FollowersContainer>
-                <img src={gitIcon2} alt="" />
+                <img src={followersIcon} alt="" />
                 <p>32 seguidores</p>
               </FollowersContainer>
             </TagsContainer>
