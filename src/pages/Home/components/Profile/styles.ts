@@ -63,17 +63,9 @@ export const NameAndReturnConteiner = styled.div`
   width: 100%;
 `
 
-export const NameContainer = styled.div`
-  /* display: flex; */
-  /* align-items: start; */
-  /* justify-content: start; */
-`
+export const NameContainer = styled.div``
 export const GitImgContainer = styled.div`
-  /* display: flex; */
   align-items: flex-end;
-  /* justify-content: flex-end; */
-
-  /* background-color:red ; */
 `
 export const TagsContainer = styled.div`
   display: flex;
