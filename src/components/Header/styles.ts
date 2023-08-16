@@ -1,31 +1,40 @@
 import styled from 'styled-components'
-import nana from '../../assents/Cover.svg'
+import effectLeft from '../../assents/effect-left.svg'
+import effectRight from '../../assents/effect-right.svg'
 
 export const HeaderContainer = styled.header`
   display: flex;
   width: 100%;
   height: 18.5rem;
-  background-image: url(${nana});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-
+  background-image: linear-gradient(
+    rgb(11, 27, 43),
+    rgb(12, 33, 55),
+    rgb(12, 37, 61),
+    rgb(12, 37, 61)
+  );
   align-items: center;
-  justify-content: center;
-  img {
-    position: relative;
-    bottom: 3.125rem;
-  }
+  justify-content: space-between;
 `
 
-// export const HeaderContainer = styled.header`
-//   display: flex;
-//   width: 100%;
-//   height: 50vw; /* Define a altura como metade da largura da tela */
-//   background-image: url(${nana});
-//   background-size: cover; /* Preenche o container sem distorcer a imagem */
-//   background-repeat: no-repeat;
+export const EffectLeftContainer = styled.div`
+  display: flex;
+  background-image: url(${effectLeft});
+  justify-content: center;
+  align-items: start;
+  width: 409px;
+  height: 188px;
+`
+export const EffectRightContainer = styled.div`
+  display: flex;
+  background-image: url(${effectRight});
+  justify-content: center;
+  align-items: flex-end;
+  width: 371px;
+  height: 236px;
+`
 
-//   align-items: center;
-//   justify-content: center;
-// `
+export const ImgContainer = styled.header`
+  position: relative;
+  bottom: 3.125rem;
+  padding: 0 30px;
+`
