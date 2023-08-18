@@ -2,21 +2,21 @@ import {
   InformationsContainer,
   InputAndButtonContainer,
   InputSearchContainer,
+  InputSearchContainerInternal,
 } from './styles'
 
 export const InputSearch = () => {
   return (
     <InputSearchContainer>
-      <InformationsContainer>
-        <h2>Publicações</h2>
-        <p>6 publicações</p>
-      </InformationsContainer>
-      <InputAndButtonContainer>
-        <input placeholder="Buscar conteúdo" />
-        {/* <button /> */}
-
-        {/* <h1>InputSearch</h1> */}
-      </InputAndButtonContainer>
+      <InputSearchContainerInternal>
+        <InformationsContainer>
+          <h2>Publicações</h2>
+          <p>6 publicações</p>
+        </InformationsContainer>
+        <InputAndButtonContainer>
+          <input placeholder="Buscar conteúdo" />
+        </InputAndButtonContainer>
+      </InputSearchContainerInternal>
     </InputSearchContainer>
   )
 }
