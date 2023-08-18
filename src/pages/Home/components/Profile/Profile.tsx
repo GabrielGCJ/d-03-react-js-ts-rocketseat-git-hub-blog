@@ -10,6 +10,7 @@ import {
   ProfileContainerInternal,
   ProfileItensConteiner,
   ProfilePictureContainer,
+  ProfileTextContainer,
   TagsContainer,
 } from './styles'
 
@@ -24,22 +25,26 @@ export const Profile = () => {
     <ProfileContainerExternal>
       <ProfileContainerInternal>
         <ProfileItensConteiner>
-          <ProfilePictureContainer></ProfilePictureContainer>
+          <ProfilePictureContainer>
+            <img src="https://github.com/GabrielGCJ.png" alt="" />
+          </ProfilePictureContainer>
 
           <ContainerInformation>
             <NameAndReturnConteiner>
               <NameContainer>
-                <h1>Cameron Williamson</h1>
+                <p>Cameron Williamson</p>
               </NameContainer>
               <GitImgContainer>
                 <img src={gitReturnIcon} alt="" />
               </GitImgContainer>
             </NameAndReturnConteiner>
-            <p className="textoLimitado">
-              Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-              viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-              volutpat pulvinar vel mass.
-            </p>
+            <ProfileTextContainer>
+              <p>
+                Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
+                viverra massa quam dignissim aenean malesuada suscipit. Nunc,
+                volutpat pulvinar vel mass.
+              </p>
+            </ProfileTextContainer>
             <TagsContainer>
               <GitTagContainer>
                 <img src={gitIcon} alt="" />
