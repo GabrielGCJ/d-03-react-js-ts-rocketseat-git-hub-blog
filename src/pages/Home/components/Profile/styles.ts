@@ -8,8 +8,7 @@ export const ProfileContainerExternal = styled.div`
 
   padding: 0 20px 20px 20px 0;
 
-  /* height: calc(0rem); // Pesquisar sobre !! */
-  margin-top: -6rem;
+  margin-top: calc(0px - 90px);
 `
 
 export const ProfileContainerInternal = styled.div`
@@ -23,12 +22,6 @@ export const ProfileContainerInternal = styled.div`
   border-radius: 10px;
 
   background: ${(props) => props.theme['base-profile']};
-
-  /* position: relative;
-  bottom: 100px; */
-
-  /* width: calc(3rem + 12px); */
-  /* height: calc(3rem + 12px); */
 `
 
 export const ProfileItensConteiner = styled.div`
@@ -60,7 +53,7 @@ export const ContainerInformation = styled.div`
   height: 100%;
   padding: 0.5rem;
 
-  overflow: hidden;
+  /* overflow: hidden;; */
 `
 
 export const NameAndReturnConteiner = styled.div`
@@ -85,7 +78,7 @@ export const NameContainer = styled.div`
     font-size: 1rem;
   }
 
-  /* overflow: hidden; */
+  overflow: hidden;
 `
 export const GitImgContainer = styled.div`
   align-items: flex-end;
@@ -105,7 +98,7 @@ export const ProfileTextContainer = styled.div`
     font-size: 0.6rem;
   }
 
-  overflow: auto;
+  overflow: scroll;
 `
 export const TagsContainer = styled.div`
   display: flex;
@@ -127,10 +120,6 @@ export const TagsContainer = styled.div`
       font-size: 0.3rem;
     }
   }
-
-  /* img {
-    width: 100%;
-  } */
 
   gap: 1rem;
 `
