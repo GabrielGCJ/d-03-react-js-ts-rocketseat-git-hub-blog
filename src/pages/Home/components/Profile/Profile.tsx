@@ -28,7 +28,6 @@ export const Profile = () => {
           <ProfilePictureContainer>
             <img src="https://github.com/GabrielGCJ.png" alt="" />
           </ProfilePictureContainer>
-
           <ContainerInformation>
             <NameAndReturnConteiner>
               <NameContainer>
