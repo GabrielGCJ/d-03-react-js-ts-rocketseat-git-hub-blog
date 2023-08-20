@@ -17,7 +17,6 @@ export const ResumePost = () => {
           <p>Há um dia</p>
         </TimerContainer>
       </TitleAndTimerContainer>
-      {/* <h1>Post</h1> */}
       <PublicationBody>
         <p>
           Programming languages all have built-in data structures, but these
