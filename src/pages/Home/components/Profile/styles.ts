@@ -98,7 +98,7 @@ export const ProfileTextContainer = styled.div`
     font-size: 0.6rem;
   }
 
-  overflow: scroll;
+  overflow: hidden;
 `
 export const TagsContainer = styled.div`
   display: flex;

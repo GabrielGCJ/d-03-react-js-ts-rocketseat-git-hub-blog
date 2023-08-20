@@ -1,4 +1,6 @@
+// import { Post } from '../Post/Post'
 import { InputSearch } from './components/InputSearch/InputSearch'
+import { ResumePost } from './components/Post/ResumePost'
 import { Profile } from './components/Profile/Profile'
 
 export const Home = () => {
@@ -6,6 +8,7 @@ export const Home = () => {
     <div>
       <Profile />
       <InputSearch />
+      <ResumePost />
     </div>
   )
 }
