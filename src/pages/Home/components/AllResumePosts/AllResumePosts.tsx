@@ -2,19 +2,22 @@ import { ResumePost } from '../ResumePost/ResumePost'
 import {
   AllResumePostsContainer,
   AllResumePostsContainerExternal,
+  AllResumePostsContainerInternal,
 } from './styles'
 
 export const AllResumePosts = () => {
   return (
     <AllResumePostsContainerExternal>
-      <AllResumePostsContainer>
-        <ResumePost />
-        <ResumePost />
-        <ResumePost />
-        <ResumePost />
-        <ResumePost />
-        <ResumePost />
-      </AllResumePostsContainer>
+      <AllResumePostsContainerInternal>
+        <AllResumePostsContainer>
+          <ResumePost />
+          <ResumePost />
+          <ResumePost />
+          <ResumePost />
+          <ResumePost />
+          {/* <ResumePost /> */}
+        </AllResumePostsContainer>
+      </AllResumePostsContainerInternal>
     </AllResumePostsContainerExternal>
   )
 }

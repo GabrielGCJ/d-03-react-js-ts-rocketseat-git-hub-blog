@@ -2,10 +2,15 @@ import styled from 'styled-components'
 
 export const AllResumePostsContainerExternal = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: row;
   width: 100%;
+`
+
+export const AllResumePostsContainerInternal = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const AllResumePostsContainer = styled.div`
@@ -14,6 +19,9 @@ export const AllResumePostsContainer = styled.div`
   max-width: 864px;
   width: 100%;
   gap: calc(3vw);
-  justify-content: center;
   margin: 0 1rem;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `

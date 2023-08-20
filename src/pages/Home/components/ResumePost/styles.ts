@@ -23,6 +23,8 @@ export const TitleAndTimerContainer = styled.div`
   /* align-items:center ; */
 
   gap: 1 rem;
+
+  overflow: hidden;
 `
 export const TitleContainer = styled.div`
   display: flex;
@@ -33,6 +35,8 @@ export const TitleContainer = styled.div`
   line-height: 160%; /* 32px */
 
   padding: 0 20px 20px 0px;
+
+  flex-shrink: 4; // Encolhe menos que o flex-shrink: 0
 `
 export const TimerContainer = styled.div`
   font-family: Nunito;
@@ -42,6 +46,8 @@ export const TimerContainer = styled.div`
   line-height: 160%; /* 22.4px */
 
   /* background: red; */
+
+  flex-shrink: 0; // Não encolhe
 
   min-width: 70px;
 `
