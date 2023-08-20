@@ -23,6 +23,8 @@ export const EffectLeftContainer = styled.div`
   align-items: start;
   width: 409px;
   height: 188px;
+
+  /* box-sizing: border-box; */
 `
 export const EffectRightContainer = styled.div`
   display: flex;

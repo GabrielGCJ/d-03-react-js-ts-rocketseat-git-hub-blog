@@ -1,14 +1,14 @@
-// import { Post } from '../Post/Post'
 import { InputSearch } from './components/InputSearch/InputSearch'
-import { ResumePost } from './components/Post/ResumePost'
 import { Profile } from './components/Profile/Profile'
+import { AllResumePosts } from './components/AllResumePosts/AllResumePosts'
+import { HomeContainer } from './styles'
 
 export const Home = () => {
   return (
-    <div>
+    <HomeContainer>
       <Profile />
       <InputSearch />
-      <ResumePost />
-    </div>
+      <AllResumePosts />
+    </HomeContainer>
   )
 }

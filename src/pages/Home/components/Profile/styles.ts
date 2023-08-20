@@ -6,9 +6,7 @@ export const ProfileContainerExternal = styled.div`
   justify-content: center;
   width: 100%;
 
-  padding: 0 20px 20px 20px 0;
-
-  margin-top: calc(0px - 90px);
+  margin-top: calc(0px - 6.25rem);
 `
 
 export const ProfileContainerInternal = styled.div`
@@ -17,8 +15,9 @@ export const ProfileContainerInternal = styled.div`
   max-width: 864px;
   width: 100%;
   height: 212px;
+  box-sizing: border-box;
 
-  margin: 0 20px;
+  margin: 0 1rem;
   border-radius: 10px;
 
   background: ${(props) => props.theme['base-profile']};
