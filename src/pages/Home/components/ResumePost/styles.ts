@@ -9,6 +9,8 @@ export const PostContainer = styled.div`
   border-radius: 10px;
   background-color: ${(props) => props.theme['base-post']};
 
+  box-sizing: border-box;
+
   flex-direction: column;
 
   justify-content: center;
@@ -53,5 +55,5 @@ export const PublicationBody = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; 25.6px
+  line-height: 160%; //                                                                                                                                                                                                                                                             25.6px
 `

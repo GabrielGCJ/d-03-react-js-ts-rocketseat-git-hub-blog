@@ -4,6 +4,7 @@ export const InputSearchContainer = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 `
 
 export const InputSearchContainerInternal = styled.div`
@@ -11,7 +12,7 @@ export const InputSearchContainerInternal = styled.div`
   max-width: 864px;
   flex-direction: column;
   width: 100%;
-  padding: 1rem;
+  margin: 1rem;
 `
 export const InputAndButtonContainer = styled.div`
   display: flex;
