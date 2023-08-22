@@ -23,11 +23,11 @@ export const OptionsNavegation = styled.div`
   align-items: start;
   width: 100%;
 
-  /* img {
+  img {
     @media screen and (max-width: 438px) {
-      height: 0.6rem;
+      height: 0.8rem;
     }
-  } */
+  }
 `
 export const TitlePost = styled.div`
   color: ${(props) => props.theme['base-title']};
@@ -39,9 +39,9 @@ export const TitlePost = styled.div`
 
   display: flex;
 
-  /* @media screen and (max-width: 438px) {
+  @media screen and (max-width: 438px) {
     font-size: 16px;
-  } */
+  }
 `
 
 export const InfoContainer = styled.div`
@@ -66,17 +66,17 @@ const BaseTagsProps = styled.div`
   font-weight: 400;
   line-height: 160%; /* 25.6px */
 
-  /* img {
+  img {
     @media screen and (max-width: 438px) {
       width: 0.6rem;
     }
-  } */
+  }
 
-  /* p {
+  p {
     @media screen and (max-width: 438px) {
       font-size: 8px;
     }
-  } */
+  }
 `
 
 export const UserContainer = styled(BaseTagsProps)``
