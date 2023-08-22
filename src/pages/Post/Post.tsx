@@ -1,3 +1,10 @@
+import { PostInfo } from './components/PostInfo/PostInfo'
+import { PostContainer } from './styles'
+
 export const Post = () => {
-  return <h1>Post</h1>
+  return (
+    <PostContainer>
+      <PostInfo />
+    </PostContainer>
+  )
 }
