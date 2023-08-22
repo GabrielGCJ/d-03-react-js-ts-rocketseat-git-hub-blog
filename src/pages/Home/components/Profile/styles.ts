@@ -14,7 +14,8 @@ export const ProfileContainerInternal = styled.div`
 
   max-width: 864px;
   width: 100%;
-  height: 212px;
+  min-height: 212px;
+  height: auto;
   box-sizing: border-box;
 
   margin: 0 1rem;
@@ -39,6 +40,7 @@ export const ProfilePictureContainer = styled.div`
   background-color: black;
   border-radius: 10px;
   margin: 10px;
+  flex-shrink: 1;
 
   overflow: hidden; // ajusta a imagem para as mesmas definiçoes de border radius
 `
@@ -93,9 +95,11 @@ export const ProfileTextContainer = styled.div`
   font-weight: 400;
   line-height: 160%; /* 25.6px */
 
-  @media screen and (max-width: 548px) {
+  flex-shrink: 0;
+
+  /* @media screen and (max-width: 548px) {
     font-size: 0.6rem;
-  }
+  } */
 
   overflow: hidden;
 `
