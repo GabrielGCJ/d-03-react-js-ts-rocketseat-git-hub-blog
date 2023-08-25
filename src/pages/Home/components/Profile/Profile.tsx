@@ -30,7 +30,7 @@ export const Profile = () => {
       <ProfileContainerInternal>
         <ProfileItensConteiner>
           <ProfilePictureContainer>
-            <img src="https://github.com/GabrielGCJ.png" alt="" />
+            <img src={userInfo.avatar_url} alt="" />
           </ProfilePictureContainer>
 
           <ContainerInformation>
