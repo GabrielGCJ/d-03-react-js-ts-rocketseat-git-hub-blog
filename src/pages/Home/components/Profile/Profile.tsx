@@ -20,7 +20,11 @@ import followersIcon from '../../../../assents/Icon-Followers.svg'
 
 import gitReturnIcon from '../../../../assents/githubReturnImg.svg'
 
+import { useContext } from 'react'
+import { BlogContext } from '../../../../contexts/BlogContext'
+
 export const Profile = () => {
+  const { userInfo } = useContext(BlogContext)
   return (
     <ProfileContainerExternal>
       <ProfileContainerInternal>
@@ -32,7 +36,7 @@ export const Profile = () => {
           <ContainerInformation>
             <NameAndReturnConteiner>
               <NameContainer>
-                <p>Cameron Williamson</p>
+                <p>{userInfo.name}</p>
               </NameContainer>
               <GitImgContainer>
                 <img src={gitReturnIcon} alt="" />
