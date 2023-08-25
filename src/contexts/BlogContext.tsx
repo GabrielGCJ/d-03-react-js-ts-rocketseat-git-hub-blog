@@ -9,8 +9,17 @@ interface User {
   company: string | null
   login: string
 }
+
+interface Issues {
+  title: string
+  body: string
+  created_at: Date
+  html_url: string
+  author_association: string
+}
 interface CreateContextType {
   userInfo: User
+  issues: Issues[]
 }
 
 export const BlogContext = createContext({} as CreateContextType)
@@ -20,7 +29,7 @@ interface BlogContextProviderProps {
 }
 
 export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
-  // const [issues, setIssues] = useState()
+  const [issues, setIssues] = useState<Issues[]>([])
   const [userInfo, setUserInfo] = useState<User>({
     name: '',
     bio: '',
@@ -32,7 +41,7 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
   })
 
   const user = 'GabrielGCJ'
-  // const nameRepository = 'd-03-react-js-ts-rocketseat-git-hub-blog'
+  const nameRepository = 'd-03-react-js-ts-rocketseat-git-hub-blog'
 
   const getUserInfo = async () => {
     const url = `https://api.github.com/users/${user}` // Informaçoes do usuario
@@ -57,37 +66,45 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
     })
   }
 
-  // const getIssues = async () => {
-  //   const url = `https://api.github.com/repos/${user}/${nameRepository}/issues` // Lista de issues;
+  const getIssues = async () => {
+    const url = `https://api.github.com/repos/${user}/${nameRepository}/issues` // Lista de issues;
 
-  //   // const url = `https://api.github.com/users/GabrielGCJ/repos/{owner}/{repo}/issues`
-  //   // const url = `https://api.github.com/users/${user}` // Informaçoes do usuario
-  //   // const url = `https://api.github.com/repos/${user}/${nameProject}/issues/ISSUE_NUMBER`
-  //   //
-  //   // const url = `https://api.github.com/users/${user}/repos`
-  //   // const url = 'https://api.github.com/users/GabrielGCJ'
+    // const url = `https://api.github.com/users/${user}/repos` // Todos os repositorios do usuario
+    // const url = `https://api.github.com/repos/${user}/${nameProject}/issues/ISSUE_NUMBER`
 
-  //   // repos/{owner}/{repo}/issues'
+    fetch(url).then(async (res) => {
+      if (!res.ok) {
+        console.log('Deu ruim!', res.status)
+      }
+      const data = await res.json()
 
-  //   fetch(url).then(async (res) => {
-  //     if (!res.ok) {
-  //       console.log('Deu ruim!', res.status)
-  //     }
-  //     const data = await res.json()
+      const newInsues = []
 
-  //     setIssues(data)
-  //   })
-  // }
+      for (let i = 0; i < data.length - 1; i++) {
+        const issues = {
+          title: data[i].title,
+          body: data[i].body,
+          created_at: data[i].created_at,
+          html_url: data[i].html_url,
+          author_association: data[i].author_association,
+        }
+        newInsues.push(issues)
+      }
+
+      setIssues(newInsues)
+    })
+  }
 
   useEffect(() => {
     getUserInfo()
-    // getIssues()
+    getIssues()
   }, [])
 
   return (
     <BlogContext.Provider
       value={{
         userInfo,
+        issues,
       }}
     >
       {children}
