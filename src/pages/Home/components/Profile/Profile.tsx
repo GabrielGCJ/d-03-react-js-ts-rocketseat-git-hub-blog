@@ -32,35 +32,37 @@ export const Profile = () => {
           <ProfilePictureContainer>
             <img src={userInfo.avatar_url} alt="" />
           </ProfilePictureContainer>
-
           <ContainerInformation>
             <NameAndReturnConteiner>
               <NameContainer>
                 <p>{userInfo.name}</p>
               </NameContainer>
               <GitImgContainer>
-                <img src={gitReturnIcon} alt="" />
+                <a target="_blank" href={userInfo.html_url} rel="noreferrer">
+                  <img src={gitReturnIcon} alt="" />
+                </a>
               </GitImgContainer>
             </NameAndReturnConteiner>
             <ProfileTextContainer>
-              <p>
+              {/* <p>
                 Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
                 viverra massa quam dignissim aenean malesuada suscipit. Nunc,
                 volutpat pulvinar vel mass.
-              </p>
+              </p> */}
+              <p>{userInfo.bio}</p>
             </ProfileTextContainer>
             <TagsContainer>
               <GitTagContainer>
                 <img src={gitIcon} alt="" />
-                <p>cameronwll</p>
+                <p>{userInfo.login}</p>
               </GitTagContainer>
               <JobTagContainer>
                 <img src={jobIcon} alt="" />
-                <p>Rocketseat</p>
+                <p>{userInfo.company}</p>
               </JobTagContainer>
               <FollowersContainer>
                 <img src={followersIcon} alt="" />
-                <p>32 seguidores</p>
+                <p>{userInfo.followers} seguidores</p>
               </FollowersContainer>
             </TagsContainer>
           </ContainerInformation>
