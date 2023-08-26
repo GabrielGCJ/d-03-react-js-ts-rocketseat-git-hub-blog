@@ -11,11 +11,13 @@ interface User {
 }
 
 interface Issues {
+  id: string
   title: string
   body: string
   created_at: Date
   html_url: string
   author_association: string
+  comments_url: string
 }
 interface CreateContextType {
   userInfo: User
@@ -78,15 +80,19 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
       }
       const data = await res.json()
 
+      console.log(data)
+
       const newInsues = []
 
       for (let i = 0; i < data.length - 1; i++) {
-        const issues = {
+        const issues: Issues = {
+          id: data[i].id,
           title: data[i].title,
           body: data[i].body,
           created_at: data[i].created_at,
           html_url: data[i].html_url,
           author_association: data[i].author_association,
+          comments_url: data[i].comments_url,
         }
         newInsues.push(issues)
       }
