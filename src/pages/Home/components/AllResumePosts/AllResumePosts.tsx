@@ -25,6 +25,7 @@ export const AllResumePosts = () => {
                 htmlUrl={issue.html_url}
                 authorLogin={issue.author_login}
                 commentsUrl={issue.comments_url}
+                numberComments={issue.numberComments}
               />
             )
           })}

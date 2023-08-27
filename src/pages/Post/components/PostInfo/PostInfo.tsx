@@ -13,10 +13,12 @@ import gitLogo from '../../../../assents/Icon-Git.svg'
 import dateIcon from '../../../../assents/Icon-date.svg'
 import commentIcon from '../../../../assents/Icon-comment.svg'
 import { useLocation } from 'react-router'
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 export const PostInfo = () => {
   const location = useLocation()
-  const { title, authorLogin } = location.state
+  const { title, authorLogin, createdAt, numberComments } = location.state
   return (
     <PostInfoConterner>
       <OptionsNavegation>
@@ -34,11 +36,14 @@ export const PostInfo = () => {
         </UserContainer>
         <DateContainer>
           <img src={dateIcon} alt="" />
-          <p>cameronwll</p>
+          {formatDistanceToNow(new Date(createdAt), {
+            addSuffix: true,
+            locale: ptBR,
+          })}
         </DateContainer>
         <NumberComemnts>
           <img src={commentIcon} alt="" />
-          <p>cameronwll</p>
+          <p>{numberComments} comentarios</p>
         </NumberComemnts>
       </InfoContainer>
     </PostInfoConterner>

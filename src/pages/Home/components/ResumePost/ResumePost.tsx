@@ -19,6 +19,7 @@ interface resumePostPropsType {
   htmlUrl: string
   authorLogin: string
   commentsUrl: string
+  numberComments: number
 }
 
 export const ResumePost = ({
@@ -29,12 +30,22 @@ export const ResumePost = ({
   htmlUrl,
   authorLogin,
   commentsUrl,
+  numberComments,
 }: resumePostPropsType) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
     navigate(`/post`, {
-      state: { id, title, body, createdAt, htmlUrl, authorLogin, commentsUrl },
+      state: {
+        id,
+        title,
+        body,
+        createdAt,
+        htmlUrl,
+        authorLogin,
+        commentsUrl,
+        numberComments,
+      },
     })
   }
 

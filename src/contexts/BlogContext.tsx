@@ -18,6 +18,7 @@ interface Issues {
   html_url: string
   comments_url: string
   author_login: string
+  numberComments: number
 }
 interface CreateContextType {
   userInfo: User
@@ -80,7 +81,7 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
       }
       const data = await res.json()
 
-      console.log(data)
+      // console.log(data)
 
       const newInsues = []
 
@@ -93,9 +94,12 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
           html_url: data[i].html_url,
           author_login: data[i].user.login,
           comments_url: data[i].comments_url,
+          numberComments: data[i].comments,
         }
         newInsues.push(issues)
       }
+
+      // console.log('issues', newInsues)
 
       setIssues(newInsues)
     })
