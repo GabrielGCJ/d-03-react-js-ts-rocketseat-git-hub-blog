@@ -18,9 +18,13 @@ export const AllResumePosts = () => {
             return (
               <ResumePost
                 key={issue.id}
-                body={issue.body}
+                id={issue.id}
                 title={issue.title}
+                body={issue.body}
                 createdAt={issue.created_at}
+                htmlUrl={issue.html_url}
+                authorLogin={issue.author_login}
+                commentsUrl={issue.comments_url}
               />
             )
           })}

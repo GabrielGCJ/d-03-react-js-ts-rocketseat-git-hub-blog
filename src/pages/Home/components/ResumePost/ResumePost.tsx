@@ -6,18 +6,40 @@ import {
   TitleContainer,
 } from './styles'
 
+import { useNavigate } from 'react-router'
+
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
 interface resumePostPropsType {
+  id: string
   title: string
   body: string
   createdAt: Date
+  htmlUrl: string
+  authorLogin: string
+  commentsUrl: string
 }
 
-export const ResumePost = ({ title, body, createdAt }: resumePostPropsType) => {
+export const ResumePost = ({
+  id,
+  title,
+  body,
+  createdAt,
+  htmlUrl,
+  authorLogin,
+  commentsUrl,
+}: resumePostPropsType) => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/post`, {
+      state: { id, title, body, createdAt, htmlUrl, authorLogin, commentsUrl },
+    })
+  }
+
   return (
-    <PostContainer>
+    <PostContainer onClick={handleClick}>
       <TitleAndTimerContainer>
         <TitleContainer>
           {/* <p>JavaScript data types and data structures</p> */}
