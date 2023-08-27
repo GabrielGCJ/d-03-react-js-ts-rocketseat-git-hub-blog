@@ -16,8 +16,8 @@ interface Issues {
   body: string
   created_at: Date
   html_url: string
-  author_association: string
   comments_url: string
+  author_login: string
 }
 interface CreateContextType {
   userInfo: User
@@ -91,7 +91,7 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
           body: data[i].body,
           created_at: data[i].created_at,
           html_url: data[i].html_url,
-          author_association: data[i].author_association,
+          author_login: data[i].user.login,
           comments_url: data[i].comments_url,
         }
         newInsues.push(issues)
