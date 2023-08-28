@@ -19,7 +19,7 @@ export const AllResumePostsContainer = styled.div`
   max-width: 864px;
   width: 100%;
   gap: calc(3vw);
-  margin: 0 1rem;
+  margin: 0 1rem 2rem;
 
   @media screen and (max-width: 700px) {
     grid-template-columns: repeat(1, 1fr);

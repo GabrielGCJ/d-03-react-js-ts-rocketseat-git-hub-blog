@@ -58,10 +58,14 @@ export const ResumePost = ({
         </TitleContainer>
         <TimerContainer>
           {/* <p>Há um dia</p> */}
-          {formatDistanceToNow(new Date(createdAt), {
-            addSuffix: true,
-            locale: ptBR,
-          })}
+          <p>
+            {`Há 
+            ${formatDistanceToNow(new Date(createdAt), {
+              addSuffix: false,
+              locale: ptBR,
+            })}
+            `}
+          </p>
         </TimerContainer>
       </TitleAndTimerContainer>
       <PublicationBody>
