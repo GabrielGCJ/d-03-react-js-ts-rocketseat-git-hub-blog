@@ -2,20 +2,22 @@ import styled from 'styled-components'
 
 export const PostContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
   max-width: 416px;
   width: 100%;
   height: 260px;
+
   /* flex-shrink: 0; // Pesquisar sobre ! */
   border-radius: 10px;
   background-color: ${(props) => props.theme['base-post']};
 
   box-sizing: border-box;
-
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
   padding: 30px;
+
+  gap: 1.5rem;
 `
 export const TitleAndTimerContainer = styled.div`
   display: flex;

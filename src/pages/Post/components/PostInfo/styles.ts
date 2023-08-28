@@ -12,7 +12,7 @@ export const PostInfoConterner = styled.div`
   padding: 30px;
   background: red;
   background-color: ${(props) => props.theme['base-profile']};
-  margin: calc(0px - 84px) 20px 0 20px;
+  margin-top: calc(0px - 84px);
   border-radius: 10px;
 `
 
@@ -22,6 +22,10 @@ export const OptionsNavegation = styled.div`
   justify-content: space-between;
   align-items: start;
   width: 100%;
+
+  div {
+    cursor: pointer;
+  }
 
   /* img {
     @media screen and (max-width: 438px) {

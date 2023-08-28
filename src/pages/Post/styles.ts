@@ -5,4 +5,6 @@ export const PostContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  flex-direction: column;
 `
