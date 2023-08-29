@@ -7,7 +7,7 @@ import {
   TitlePost,
   UserContainer,
 } from './styles'
-// import { useNavigate } from 'react-router'
+
 import back from '../../../../assents/back.svg'
 import goToGit from '../../../../assents/github.svg'
 import gitLogo from '../../../../assents/Icon-Git.svg'
@@ -46,14 +46,18 @@ export const PostInfo = () => {
         </UserContainer>
         <DateContainer>
           <img src={dateIcon} alt="" />
-          {formatDistanceToNow(new Date(createdAt), {
-            addSuffix: true,
+          {`Há ${formatDistanceToNow(new Date(createdAt), {
+            addSuffix: false,
             locale: ptBR,
-          })}
+          })}`}
         </DateContainer>
         <NumberComemnts>
           <img src={commentIcon} alt="" />
-          <p>{numberComments} comentarios</p>
+          {numberComments >= 2 ? (
+            <p>{numberComments} comentarios</p>
+          ) : (
+            <p>{numberComments} comentario</p>
+          )}
         </NumberComemnts>
       </InfoContainer>
     </PostInfoConterner>
