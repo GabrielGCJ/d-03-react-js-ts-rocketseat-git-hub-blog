@@ -6,11 +6,19 @@ import {
   InputSearchContainerInternal,
 } from './styles'
 import { BlogContext } from '../../../../contexts/BlogContext'
+import { useForm } from 'react-hook-form'
 
 export const InputSearch = () => {
-  const { issues } = useContext(BlogContext)
+  const { issues, SearchFetchIssues } = useContext(BlogContext)
+
+  const { register, handleSubmit } = useForm<SearchFormImputs>()
+
+  const handleSearchIssues = async (data: SearchFormImputs) => {
+    await SearchFetchIssues(data.query)
+  }
+
   return (
-    <InputSearchContainer>
+    <InputSearchContainer onSubmit={handleSubmit(handleSearchIssues)}>
       <InputSearchContainerInternal>
         <InformationsContainer>
           <h2>Publicações</h2>
@@ -22,7 +30,8 @@ export const InputSearch = () => {
           )}
         </InformationsContainer>
         <InputAndButtonContainer>
-          <input placeholder="Buscar conteúdo" />
+          <input placeholder="Buscar conteúdo" {...register('query')} />
+          {/* <button></button> */}
         </InputAndButtonContainer>
       </InputSearchContainerInternal>
     </InputSearchContainer>
