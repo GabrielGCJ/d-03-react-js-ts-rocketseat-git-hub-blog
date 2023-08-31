@@ -10,7 +10,6 @@ export const PostContainer = styled.div`
   width: 100%;
   height: 260px;
 
-  /* flex-shrink: 0; // Pesquisar sobre ! */
   border-radius: 10px;
   background-color: ${(props) => props.theme['base-post']};
 
@@ -22,7 +21,6 @@ export const PostContainer = styled.div`
 export const TitleAndTimerContainer = styled.div`
   display: flex;
   flex-direction: row;
-  /* align-items:center ; */
 
   gap: 1 rem;
 
@@ -47,8 +45,6 @@ export const TimerContainer = styled.div`
   font-weight: 400;
   line-height: 160%; /* 22.4px */
 
-  /* background: red; */
-
   flex-shrink: 0; // Não encolhe
 
   min-width: 70px;
@@ -57,7 +53,6 @@ export const PublicationBody = styled.div`
   overflow: hidden;
   color: var(--base-text, #afc2d4);
   text-overflow: ellipsis;
-  /* white-space: nowrap; */
 
   font-family: Nunito;
   font-size: 16px;

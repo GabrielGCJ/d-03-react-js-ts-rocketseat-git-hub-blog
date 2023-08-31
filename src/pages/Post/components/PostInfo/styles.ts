@@ -39,7 +39,7 @@ export const TitlePost = styled.div`
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%; /* 31.2px */
+  line-height: 130%;
 
   display: flex;
 

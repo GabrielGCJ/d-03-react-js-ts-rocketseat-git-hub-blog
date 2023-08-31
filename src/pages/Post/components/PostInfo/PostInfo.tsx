@@ -36,7 +36,6 @@ export const PostInfo = () => {
         </a>
       </OptionsNavegation>
       <TitlePost>
-        {/* <p>JavaScript data types and data structures</p> */}
         <p>{title}</p>
       </TitlePost>
       <InfoContainer>
