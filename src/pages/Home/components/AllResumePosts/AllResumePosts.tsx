@@ -29,13 +29,6 @@ export const AllResumePosts = () => {
               />
             )
           })}
-
-          {/* <ResumePost />
-          <ResumePost />
-          <ResumePost />
-          <ResumePost />
-          <ResumePost /> */}
-          {/* <ResumePost /> */}
         </AllResumePostsContainer>
       </AllResumePostsContainerInternal>
     </AllResumePostsContainerExternal>

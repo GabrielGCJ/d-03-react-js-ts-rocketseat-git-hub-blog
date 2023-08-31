@@ -44,11 +44,6 @@ export const Profile = () => {
               </GitImgContainer>
             </NameAndReturnConteiner>
             <ProfileTextContainer>
-              {/* <p>
-                Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-                viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-                volutpat pulvinar vel mass.
-              </p> */}
               <p>{userInfo.bio}</p>
             </ProfileTextContainer>
             <TagsContainer>

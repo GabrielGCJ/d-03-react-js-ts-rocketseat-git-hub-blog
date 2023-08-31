@@ -7,23 +7,16 @@ import { useComment } from '../../hooks/useComment'
 
 export const Post = () => {
   const location = useLocation()
-  const {
-    id,
-    // title,
-    // body,
-    // createdAt,
-    // commentsUrl
-  } = location.state
+  const { id } = location.state
 
   const comments = useComment(id)
 
-  console.log('comments', comments)
+  // console.log('comments', comments)
 
   return (
     <PostContainer>
       <PostInfo />
       <BodyInfo />
-      {/* <p>{body}</p> */}
       {comments.map((comment) => {
         return <p>{comment as string}</p>
       })}

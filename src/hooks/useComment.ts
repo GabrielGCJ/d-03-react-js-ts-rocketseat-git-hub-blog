@@ -23,8 +23,6 @@ export const useComment = (id: string) => {
           }
           const data = await res.json()
 
-          // const comments = []
-
           const comments = data
             .filter((item: { body: string }) => item.body)
             .map((item: { body: string }) => item.body)

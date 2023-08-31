@@ -51,8 +51,6 @@ export const ContainerInformation = styled.div`
   width: 100%;
   height: 100%;
   padding: 0.5rem;
-
-  /* overflow: hidden;; */
 `
 
 export const NameAndReturnConteiner = styled.div`
