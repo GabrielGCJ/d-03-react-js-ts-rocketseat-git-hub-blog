@@ -34,6 +34,11 @@ export const InputAndButtonContainer = styled.div`
       padding-left: 1rem;
     }
   }
+
+  /* button {
+    width: 50px;
+    height: 50px;
+  } */
 `
 export const InformationsContainer = styled.div`
   display: flex;

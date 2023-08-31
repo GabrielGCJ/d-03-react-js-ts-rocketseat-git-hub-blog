@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BodyInfoContainer = styled.body`
+export const BodyInfoContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
