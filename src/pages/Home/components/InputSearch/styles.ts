@@ -24,6 +24,10 @@ export const InputAndButtonContainer = styled.div`
     width: 100%;
     height: 50px;
 
+    text-indent: 1rem;
+
+    color: ${(props) => props.theme['base-text']};
+
     background: ${(props) => props.theme['base-input']};
 
     border: 2px solid ${(props) => props.theme['base-border']};
@@ -31,7 +35,7 @@ export const InputAndButtonContainer = styled.div`
 
     &::placeholder {
       color: ${(props) => props.theme['base-text']};
-      padding-left: 1rem;
+      /* padding-left: 1rem; */
     }
   }
 
