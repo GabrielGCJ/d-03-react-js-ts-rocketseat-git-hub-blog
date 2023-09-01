@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-children-prop */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PostContentContainer } from './styles'
 import { Prism as SyntaxHighLighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import ReactMarkdown from 'react-markdown'
 
 // npm install react-syntax-highlighter --save
 // npm install @types/react-syntax-highlighter -D
-
-import ReactMarkdown from 'react-markdown'
 
 interface PostContentProps {
   content: string
