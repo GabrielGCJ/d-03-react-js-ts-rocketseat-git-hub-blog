@@ -52,6 +52,8 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
 
   const user = 'GabrielGCJ'
   const nameRepository = 'd-03-react-js-ts-rocketseat-git-hub-blog'
+  // const user = 'GBDev13'
+  // const nameRepository = 'blog-posts'
 
   const getUserInfo = async () => {
     const url = `https://api.github.com/users/${user}` // Informaçoes do usuario
@@ -175,11 +177,19 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
         newInsues.push(issues)
       }
 
+      const filterIssues = []
+
+      for (let i = 0; i < newInsues.length; i++) {
+        if (newInsues[i].body !== null) {
+          filterIssues.push(newInsues[i])
+        }
+      }
+
       // console.log('issues', newInsues)
 
-      console.log('nana', newInsues)
+      // console.log('nana', newInsues)
 
-      setIssues(newInsues)
+      setIssues(filterIssues)
     })
   }
 
