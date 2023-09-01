@@ -50,13 +50,17 @@ export const TimerContainer = styled.div`
   min-width: 70px;
 `
 export const PublicationBody = styled.div`
-  overflow: hidden;
   color: var(--base-text, #afc2d4);
+
+  overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; //                                                                                                                                                                                                                                                             25.6px
+  line-height: 160%;
 `
