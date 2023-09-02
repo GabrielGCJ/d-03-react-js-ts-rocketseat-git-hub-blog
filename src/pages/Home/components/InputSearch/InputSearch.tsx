@@ -8,13 +8,21 @@ import {
 import { BlogContext } from '../../../../contexts/BlogContext'
 import { useForm } from 'react-hook-form'
 
+interface SearchFormImputs {
+  query: string
+}
+
 export const InputSearch = () => {
-  const { issues, SearchFetchIssues } = useContext(BlogContext)
+  const {
+    posts,
+    // SearchFetchIssues,
+    getPosts,
+  } = useContext(BlogContext)
 
   const { register, handleSubmit } = useForm<SearchFormImputs>()
 
   const handleSearchIssues = async (data: SearchFormImputs) => {
-    await SearchFetchIssues(data.query)
+    await getPosts(data.query)
   }
 
   return (
@@ -23,10 +31,10 @@ export const InputSearch = () => {
         <InformationsContainer>
           <h2>Publicações</h2>
 
-          {issues.length >= 2 ? (
-            <p>{issues.length} publicações</p>
+          {posts.length >= 2 ? (
+            <p>{posts.length} publicações</p>
           ) : (
-            <p>{issues.length} publicação</p>
+            <p>{posts.length} publicação</p>
           )}
         </InformationsContainer>
         <InputAndButtonContainer>

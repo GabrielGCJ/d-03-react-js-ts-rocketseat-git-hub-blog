@@ -16,7 +16,7 @@ interface User {
   login: string
 }
 
-interface Issues {
+interface Posts {
   id: string
   title: string
   body: string
@@ -28,8 +28,9 @@ interface Issues {
 }
 interface CreateContextType {
   userInfo: User
-  issues: Issues[]
-  SearchFetchIssues: (query?: string) => Promise<void>
+  posts: Posts[]
+  // fetchPosts: (query?: string) => Promise<void>
+  getPosts: (query?: string) => Promise<void>
 }
 
 export const BlogContext = createContext({} as CreateContextType)
@@ -39,7 +40,7 @@ interface BlogContextProviderProps {
 }
 
 export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
-  const [issues, setIssues] = useState<Issues[]>([])
+  const [posts, setPosts] = useState<Posts[]>([])
   const [userInfo, setUserInfo] = useState<User>({
     name: '',
     bio: '',
@@ -50,164 +51,130 @@ export const BlogContextProvider = ({ children }: BlogContextProviderProps) => {
     login: '',
   })
 
-  const user = 'GabrielGCJ'
+  const userName = 'GabrielGCJ'
   const nameRepository = 'd-03-react-js-ts-rocketseat-git-hub-blog'
-  // const user = 'GBDev13'
-  // const nameRepository = 'blog-posts'
+
+  // const fetchUserInfo = async () => {
+  //   const url = `https://api.github.com/users/${userName}` // Informaçoes do usuario
+
+  //   fetch(url).then(async (res) => {
+  //     if (!res.ok) {
+  //       console.log('Deu ruim!', res.status)
+  //     }
+  //     const data = await res.json()
+
+  //     const user = {
+  //       name: data.name,
+  //       bio: data.bio,
+  //       avatar_url: data.avatar_url,
+  //       html_url: data.html_url,
+  //       followers: data.followers,
+  //       company: data.company,
+  //       login: data.login,
+  //     }
+
+  //     setUserInfo(user)
+  //   })
+  // }
+
+  // A função comentada acima faz exatamente a mesma coisa que a função abaixo,
+  // mas a comentada utiliza o fetch e a abaixo utiliza o axios.
 
   const getUserInfo = async () => {
-    const url = `https://api.github.com/users/${user}` // Informaçoes do usuario
+    const response = await api.get(`/users/${userName}`)
 
-    fetch(url).then(async (res) => {
-      if (!res.ok) {
-        console.log('Deu ruim!', res.status)
-      }
-      const data = await res.json()
+    const data = response.data
 
-      const user = {
-        name: data.name,
-        bio: data.bio,
-        avatar_url: data.avatar_url,
-        html_url: data.html_url,
-        followers: data.followers,
-        company: data.company,
-        login: data.login,
-      }
-
-      setUserInfo(user)
-    })
-  }
-
-  const fetchIssues = async () => {
-    const url = new URL(
-      `https://api.github.com/repos/${user}/${nameRepository}/issues`,
-    ) // Lista de issues;
-
-    fetch(url).then(async (res) => {
-      if (!res.ok) {
-        console.log('Deu ruim!', res.status)
-      }
-      const data = await res.json()
-
-      const newInsues = []
-
-      for (let i = 0; i < data.length - 1; i++) {
-        const issues: Issues = {
-          id: data[i].id,
-          title: data[i].title,
-          body: data[i].body,
-          created_at: data[i].created_at,
-          html_url: data[i].html_url,
-          author_login: data[i].user.login,
-          comments_url: data[i].comments_url,
-          numberComments: data[i].comments,
-        }
-        newInsues.push(issues)
-      }
-
-      // console.log('issues', newInsues)
-
-      setIssues(newInsues)
-    })
-  }
-
-  // const getIssues = useCallback(
-  //   async (query: string = '') => {
-  //     try {
-  //       const response = await api.get(
-  //         `/search/issues?q=${query}%20repo:${user}/${nameRepository}`,
-  //       )
-  //       setIssues(response.data.items)
-  //       console.log('nanina', response.data.items)
-  //     } finally {
-  //     }
-  //   },
-  //   [issues],
-  // )
-
-  const getIssues = async (query: string = '') => {
-    // try {
-    const response = await api.get(
-      `/search/issues?q=${query}%20repo:${user}/${nameRepository}`,
-    )
-    // setIssues(response.data.items)
-    console.log('nanina', response.data.items)
-
-    const list = response.data.items
-
-    const issues = []
-
-    for (let i = 0; i < list.length; i++) {
-      if (list[i].body !== null) {
-        issues.push(list[i])
-      }
+    const user: User = {
+      name: data.name,
+      bio: data.bio,
+      avatar_url: data.avatar_url,
+      html_url: data.html_url,
+      followers: data.followers,
+      company: data.company,
+      login: data.login,
     }
 
-    console.log('newissues', issues)
+    setUserInfo(user)
   }
 
-  const SearchFetchIssues = async (query?: string) => {
-    const url = new URL(
-      `https://api.github.com/search/issues?q=${query}%20repo:${user}/${nameRepository}`,
-    )
+  // const fetchPosts = async (query: string = '') => {
+  //   const url = new URL(
+  //     `https://api.github.com/search/issues?q=${query}%20repo:${userName}/${nameRepository}`,
+  //   )
 
-    fetch(url).then(async (res) => {
-      if (!res.ok) {
-        console.log('Deu ruim!', res.status)
-      }
-      const datr = await res.json()
+  //   fetch(url).then(async (res) => {
+  //     if (!res.ok) {
+  //       console.log('Deu ruim!', res.status)
+  //     }
 
-      const data = datr.items
+  //     const response = await res.json()
+  //     const data = response.items
 
-      console.log(datr)
+  //     const newInsues = []
 
-      const newInsues = []
+  //     for (let i = 0; i < data.length; i++) {
+  //       const issues: Posts = {
+  //         id: data[i].id,
+  //         title: data[i].title,
+  //         body: data[i].body,
+  //         created_at: data[i].created_at,
+  //         html_url: data[i].html_url,
+  //         author_login: data[i].user.login,
+  //         comments_url: data[i].comments_url,
+  //         numberComments: data[i].comments,
+  //       }
+  //       newInsues.push(issues)
+  //     }
 
-      for (let i = 0; i < data.length; i++) {
-        const issues: Issues = {
-          id: data[i].id,
-          title: data[i].title,
-          body: data[i].body,
-          created_at: data[i].created_at,
-          html_url: data[i].html_url,
-          author_login: data[i].user.login,
-          comments_url: data[i].comments_url,
-          numberComments: data[i].comments,
+  //     const filterIssues = []
+
+  //     for (let i = 0; i < newInsues.length; i++) {
+  //       if (newInsues[i].body !== null) {
+  //         filterIssues.push(newInsues[i])
+  //       }
+  //     }
+
+  //     setPosts(filterIssues)
+  //   })
+  // }
+
+  const getPosts = async (query: string = '') => {
+    try {
+      const response = await api.get(
+        `/search/issues?q=${query}%20repo:${userName}/${nameRepository}`,
+      )
+
+      const listPosts = response.data.items
+
+      const posts = []
+
+      for (let i = 0; i < listPosts.length; i++) {
+        if (listPosts[i].body !== null) {
+          posts.push(listPosts[i])
         }
-        newInsues.push(issues)
       }
 
-      const filterIssues = []
-
-      for (let i = 0; i < newInsues.length; i++) {
-        if (newInsues[i].body !== null) {
-          filterIssues.push(newInsues[i])
-        }
-      }
-
-      // console.log('issues', newInsues)
-
-      // console.log('nana', newInsues)
-
-      setIssues(filterIssues)
-    })
+      setPosts(posts)
+    } catch (error) {
+      console.log('Ocorreu um erro durante a solicitação', error)
+    }
   }
 
   useEffect(() => {
+    // fetchPosts()
     getUserInfo()
-    fetchIssues()
-    // SearchFetchIssues()
-    // getUserInfo()
-    // getIssues()
-    getIssues()
+    // fetchPosts()
+    getPosts()
   }, [])
 
   return (
     <BlogContext.Provider
       value={{
         userInfo,
-        issues,
-        SearchFetchIssues,
+        posts,
+        // SearchFetchIssues,
+        getPosts,
       }}
     >
       {children}
