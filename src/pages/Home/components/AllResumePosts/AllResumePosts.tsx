@@ -8,24 +8,24 @@ import {
 import { BlogContext } from '../../../../contexts/BlogContext'
 
 export const AllResumePosts = () => {
-  const { issues } = useContext(BlogContext)
+  const { posts } = useContext(BlogContext)
 
   return (
     <AllResumePostsContainerExternal>
       <AllResumePostsContainerInternal>
         <AllResumePostsContainer>
-          {issues.map((issue) => {
+          {posts.map((post) => {
             return (
               <ResumePost
-                key={issue.id}
-                id={issue.id}
-                title={issue.title}
-                body={issue.body}
-                createdAt={issue.created_at}
-                htmlUrl={issue.html_url}
-                authorLogin={issue.author_login}
-                commentsUrl={issue.comments_url}
-                numberComments={issue.numberComments}
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                body={post.body}
+                createdAt={post.created_at}
+                htmlUrl={post.html_url}
+                authorLogin={post.author_login}
+                commentsUrl={post.comments_url}
+                numberComments={post.numberComments}
               />
             )
           })}
