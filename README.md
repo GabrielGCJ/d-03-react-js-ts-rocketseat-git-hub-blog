@@ -14,3 +14,28 @@ https://www.figma.com/community/file/1138814951106121051
 ![image](https://github.com/GabrielGCJ/d-03-react-js-ts-rocketseat-git-hub-blog/assets/91347602/292b40e4-667a-4958-b00d-d5da2c697a96)
 
 -----
+
+### Para rodar o projeto:
+
+Clone este repositório em sua máquina:
+
+`git clone https://github.com/GabrielGCJ/d-03-react-js-ts-rocketseat-git-hub-blog.git`
+
+Entre na pasta do projeto:
+
+`cd d-03-react-js-ts-rocketseat-git-hub-blog`
+
+Instale o projeto:
+
+`npm install`
+
+Rode o projeto:
+
+`npm run dev`
+
+Acesse o endereço localhost porta 3333 em seu navegador ou ferramenta de testes para interagir com a API:
+
+http://localhost:3002
+
+-----
+
