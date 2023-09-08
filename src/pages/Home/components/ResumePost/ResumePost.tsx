@@ -35,7 +35,7 @@ export const ResumePost = ({
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate(`/post`, {
+    navigate(`/post/${id}`, {
       state: {
         id,
         title,
@@ -50,7 +50,7 @@ export const ResumePost = ({
   }
 
   return (
-    <PostContainer onClick={handleClick}>
+    <PostContainer to={''} onClick={handleClick}>
       <TitleAndTimerContainer>
         <TitleContainer>
           <p>{title}</p>
