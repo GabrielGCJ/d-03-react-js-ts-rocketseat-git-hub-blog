@@ -2,16 +2,16 @@ import { useContext, useEffect, useState } from 'react'
 import { BlogContext } from '../contexts/BlogContext'
 
 export const useComment = (id: string) => {
-  const { issues } = useContext(BlogContext)
+  const { posts } = useContext(BlogContext)
 
   const [comments, setComments] = useState([])
 
   useEffect(() => {
     let url = ''
 
-    for (let i = 0; i < issues.length; i++) {
-      if (issues[i].id === id) {
-        url = issues[i].comments_url
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].id === id) {
+        url = posts[i].comments_url
       }
     }
 
@@ -33,7 +33,7 @@ export const useComment = (id: string) => {
           console.error('Erro na requisição:', error)
         })
     }
-  }, [id, issues])
+  }, [id, posts])
 
   return comments
 }
