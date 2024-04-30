@@ -50,7 +50,7 @@ export const ResumePost = ({
   }
 
   return (
-    <PostContainer to={''} onClick={handleClick}>
+    <PostContainer onClick={handleClick}>
       <TitleAndTimerContainer>
         <TitleContainer>
           <p>{title}</p>
